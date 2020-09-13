@@ -266,6 +266,11 @@ img {
     margin: 0 3px;
   }
 
+  .navbar a:hover {
+    background: rgba(29, 28, 28, 0.3);
+    border-bottom: #28a745 2px solid;
+  }
+
   .flex-items {
     flex-direction: column;
   }
