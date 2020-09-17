@@ -12,24 +12,30 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
     />
-    <title>Welcome To EdgeLedger || Home</title>
+    <title>Welcome To HiBank || Home</title>
   </head>
   <body id="home">
     <header class="hero">
       <div id="navbar" class="navbar top">
-        <h1 class="logo">
-          <a href="index.html" class="hometag"
-            ><span class="text-primary"><i class="fas fa-book-open"></i>Hi</span
-            >Bank</a
-          >
-        </h1>
+        <h2>
+          <a href="#index" class="hometag"
+            ><span class="text-primary"><i class="fas fa-book-open"></i></span>
+            <span class="phone-hide"> Hi Bank</span>
+          </a>
+        </h2>
+
+        <input type="checkbox" id="nav-toggle" />
+        <label for="nav-toggle" id="toggler">
+          <span id="hamburger"></span>
+        </label>
+
         <nav>
           <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#cases">Cases</a></li>
-            <li><a href="#blog">Blog</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li class="listItem"><a href="#home">Home</a></li>
+            <li class="listItem"><a href="#about">About</a></li>
+            <li class="listItem"><a href="#cases">Cases</a></li>
+            <li class="listItem"><a href="#blog">Blog</a></li>
+            <li class="listItem"><a href="#contact">Contact</a></li>
           </ul>
         </nav>
       </div>
@@ -495,26 +501,18 @@
     <script>
       const navbar = document.getElementById("navbar");
       const navStyle = navbar.style;
-      let scolled = false;
-
-      let mql = window.matchMedia("(max-width: 768px)");
+      let scrolled = false;
 
       window.onscroll = function () {
         if (window.pageYOffset > 100) {
           navStyle.transform = "translateY(-60px)";
           navStyle.background = "#333";
-          // navbar.classList.add("top");
           navStyle.backdropFilter = "blur(100px)";
 
           if (!scrolled) {
             navStyle.transform = "translateY(-60px)";
             navStyle.background = "#333";
-            // navbar.classList.add("top");
             navStyle.backdropFilter = "blur(100px)";
-
-            // setTimeout(function () {
-            //   navbar.style.transform = "translateY(0)";
-            // });
           }
         } else {
           navStyle.backdropFilter = "none";
@@ -523,6 +521,17 @@
           scrolled = false;
         }
       };
+    </script>
+
+    <script>
+      const listItem = document.querySelectorAll(".listItem");
+      const navToggle = document.getElementById("nav-toggle");
+
+      listItem.forEach((item) => {
+        item.addEventListener("click", function () {
+          navToggle.checked = false;
+        });
+      });
     </script>
   </body>
 </html>

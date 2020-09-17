@@ -13,23 +13,13 @@
   </head>
   <body id="home">
     <header class="hero blog">
-      <div id="navbar" class="navbar">
-        <!-- <h1 class="logo">
-          <a href="#home" class="hometag"
-            ><span class="text-primary"
-              ><i class="fas fa-book-open"></i>Edge</span
-            >Ledger</a
-          >
-        </h1> -->
-        <nav>
-          <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="index.html#about">About</a></li>
-            <li><a href="index.html#cases">Cases</a></li>
-            <li><a href="index.html#blog">Blog</a></li>
-            <li><a href="index.html#contact">Contact</a></li>
-          </ul>
-        </nav>
+      <div id="navbar" class="navbar top">
+        <h2>
+          <a href="/index.html" class="hometag"
+            ><span class="text-primary"><i class="fas fa-book-open"></i></span>
+            <span class="phone-hide"> Hi Bank</span>
+          </a>
+        </h2>
       </div>
 
       <div class="content">
@@ -92,19 +82,14 @@
     <script>
       const navbar = document.getElementById("navbar");
       const navStyle = navbar.style;
-      let scolled = false;
+      let scrolled = false;
 
       navStyle.display = "none";
-      navStyle.paddingBottom = "30px";
-      navStyle.paddingTop = "30px";
       window.onscroll = function () {
         if (window.pageYOffset > 100) {
           if (!scrolled) {
             navStyle.display = "flex";
-            navStyle.height = "70px";
-            // navStyle.paddingBottom = "30px";
-            navStyle.alignItems = "center";
-            navStyle.justifyContent = "center";
+            navStyle.transform = "translateY(-60px)";
             navStyle.background = "#333";
             navStyle.backdropFilter = "blur(30px)";
           }
